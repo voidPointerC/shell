@@ -1,5 +1,5 @@
 #include "include/inputHandler.h"
-
+#include "include/parser.h"
 
 
 void waitForinput(void) {
@@ -26,11 +26,7 @@ void readLine(void){
       }
     }
   }
-  char *token = strtok(inpString, " ");
-  while(token) {
-    puts(token);
-    token = strtok(NULL, " ");
-  }
+  Tokenize(inpString);
   printf("freeing inpString\n");
   free(inpString);
 }
